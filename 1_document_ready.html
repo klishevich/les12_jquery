@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="js/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() { // эта часть всегда пишется
+      // тут пишем методы
+      $("button").click(function() {
+        $("p").hide();
+      });
+    }); // эта закрывающая скобка тоже
+  </script>
+  <title>Document ready</title>
+</head>
+<body>
+  <h1>Document ready</h1>
+  <p>This is a paragraph.</p>
+  <p>This is another paragraph.</p>
+  <button>Спрятать p</button>
+</body>
+</html>

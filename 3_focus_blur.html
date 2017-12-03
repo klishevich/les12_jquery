@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    .yellow {
+      background: yellow;
+    }
+  </style>
+  <script src="js/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() { // эта часть всегда пишется
+      // тут пишем методы
+      $("#first").focus(function(){
+        $("#first").addClass("yellow");
+      });
+      $("#first").blur(function(){
+        $("#first").removeClass("yellow");
+      });
+    }); // эта закрывающая скобка тоже
+  </script>
+  <title>События focus / blur</title>
+</head>
+<body>
+  <h1>События focus / blur</h1>
+  <p><b>Поставьте курсор в первое поле, уберите курсор из первого поля</b></p>
+  <div>
+    Первое поле: <input id="first">
+  </div>
+  <div>
+    Второе поле: <input id="second">
+  </div>
+</body>
+</html>

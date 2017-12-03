@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    .yellow {
+      background: yellow;
+    }
+  </style>
+  <script src="js/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() { // эта часть всегда пишется
+      // тут пишем методы
+      $("#target").submit(function( event ) {
+        var name = $("#name").val();
+        var alertMsg = name + " вы засабмитили форму";
+        alert(alertMsg);
+        event.preventDefault();
+      });
+    }); // эта закрывающая скобка тоже
+  </script>
+  <title>Событие по сохранению формы</title>
+</head>
+<body>
+  <h1>Событие по сохранению формы</h1>
+  <p><b>Введите ваше имя и нажмите кнопку</b></p>
+  <form id="target" action="#">
+    <input id="name" type="text" value="Михаил">
+    <input type="submit" value="Нажмите кнопку">
+  </form>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+  .wrapper {
+    margin: 20px;
+  }
+
+  #div1 {
+    background: #98bf21;
+    height: 200px;
+    width: 200px;
+    /* Чтобы работало нужно position ставить relative, fixed или absolute */
+    position:absolute;
+  }
+  </style>
+  <script src="js/jquery.min.js"></script>
+  <script>
+  $(document).ready(function() { // эта часть всегда пишется
+    // тут пишем методы
+    $("#button1").click(function(){
+      $("#div1").animate({
+        left: '100px',
+        marginTop: '100px',
+        height: '+=100px',
+        width: '+=100px'
+      }, 3000);
+    });
+    $("#stop").click(function(){
+        $("#div1").stop();
+    });
+  }); // эта закрывающая скобка тоже
+  </script>
+  <title>Анимировать</title>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Анимировать / СТОП </h1>
+    <button id="button1">Жми несколько раз!</button>
+    <button id="stop">СТОП!</button>
+  </div>
+  <div class="wrapper">
+    <div id="div1">Крибле-крабле- бумс!</div>
+  </div>
+</body>
+</html>

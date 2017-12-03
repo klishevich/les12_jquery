@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="js/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() { // эта часть всегда пишется
+      // тут пишем методы
+      $("button").click(function() {
+        $("#first").hide();
+      });
+    }); // эта закрывающая скобка тоже
+  </script>
+  <title>Селектор по ID</title>
+</head>
+<body>
+  <h1>Селектор по ID</h1>
+  <p id="first">Параграф с id = first.</p>
+  <p>Параграф без id = first</p>
+  <button>спрятать элемент с id = first</button>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    .my_class1 {
+      background: grey;
+      width: 500px;
+    }
+  </style>
+  <script src="js/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() { // эта часть всегда пишется
+      // тут пишем методы
+      $("button").click(function() {
+        $(".my_class1").hide();
+      });
+    }); // эта закрывающая скобка тоже
+  </script>
+  <title>Селектор класса</title>
+</head>
+<body>
+  <h1>Селектор класса</h1>
+  <div class="my_class1">Div с классом my_class1</div>
+  <div class="my_class1">Div с классом my_class1</div>
+  <div>Div с другим классом</div>
+  <button>спрятать элемент с классом my_class1</button>
+</body>
+</html>

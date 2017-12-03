@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+  .wrapper {
+    margin: 20px;
+  }
+
+  #div1 {
+    background: #98bf21;
+    height: 200px;
+    width: 200px;
+    /* Чтобы работало нужно position ставить relative, fixed или absolute */
+    position:relative;
+  }
+  </style>
+  <script src="js/jquery.min.js"></script>
+  <script>
+  $(document).ready(function() { // эта часть всегда пишется
+    // тут пишем методы
+    $("#button1").click(function(){
+      $("#div1").css("color", "red").slideUp(2000).slideDown(2000);
+    });
+  }); // эта закрывающая скобка тоже
+  </script>
+  <title>Chaining</title>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Chaining</h1>
+    <button id="button1">нажмите</button>
+  </div>
+  <div class="wrapper">
+    <div id="div1">«Горшочек, вари!», «горшочек, не вари!»</div>
+  </div>
+</body>
+</html>

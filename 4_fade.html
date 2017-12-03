@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+  .common {
+    margin: 10px;
+    width:80px;
+    height:80px;
+    display:none;
+    color: white;
+  }
+
+  .div1 {
+    background-color:red;
+  }
+
+  .div2 {
+    background-color:green;
+  }
+
+  .div3 {
+    background-color:blue;
+  }
+  </style>
+  <script src="js/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() { // эта часть всегда пишется
+      // тут пишем методы
+      $("#fade_in").click(function(){
+        $(".div1").fadeIn(100);
+        $(".div2").fadeIn(1000);
+        $(".div3").fadeIn(5000);
+      });
+      $("#fade_out").click(function(){
+        $(".div1").fadeOut(100);
+        $(".div2").fadeOut(1000);
+        $(".div3").fadeOut(5000);
+      });
+    }); // эта закрывающая скобка тоже
+  </script>
+  <title>Бледнеть Fade</title>
+</head>
+<body>
+  <h1>Бледнеть Fade</h1>
+  <button id="fade_in">fade_in</button>
+  <button id="fade_out">fade_out</button>
+  <div class="common div1">Div с классом div1</div>
+  <div class="common div2">Div с классом div2</div>
+  <div class="common div3">Div с классом div3</div>
+</body>
+</html>
