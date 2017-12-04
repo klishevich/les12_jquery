@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <style>
+    .my_div {
+      padding: 3px;
+      border: 1px solid black;
+    }
+  </style>
+  <script src="js/jquery.min.js"></script>
+  <script> 
+  $(document).ready(function() { // эта часть всегда пишется
+    // тут пишем методы
+    $("#button1").click(function(){
+      $(".class1").text(function(index, origText){
+        if (index === 0) {
+          return origText + " - это старый текст, index: " + index + " - это первая строка. ";
+        }
+        return origText + " - это старый текст, index: " + index + " - это НЕ первая строка. ";
+      });
+    });
+
+    $("#button2").click(function(){
+      $(".class2").html(function(index, origText){
+        return '<div class="my_div"> это новый текст, а раньше был ' + origText +'</div>';
+      });
+    });
+  }); // эта закрывающая скобка тоже
+  </script>
+  <title>Callback Function для text(), html(), and val()</title>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Callback Function для text(), html(), and val()</h1>
+  </div>
+  <div class="wrapper">
+    <button id="button1">нажмите будет callback для текста</button>
+    <div class="class1">один текст</div>
+    <div class="class1">другой текст</div>
+    <div class="class1">третий текст</div>
+  </div>
+  <div class="wrapper">
+    <button id="button2">нажмите будет callback для текста</button>
+    <div class="class2">СТАРЫЙ ТЕКСТ</div>
+  </div>
+</body>
+</html>

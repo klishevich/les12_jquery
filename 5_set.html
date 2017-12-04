@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/jquery.min.js"></script>
+  <script> 
+  $(document).ready(function() { // эта часть всегда пишется
+    // тут пишем методы
+    $("#button1").click(function(){
+      $("#field1").text("Согласитесь, что лучше иметь трусы в горошек, чем горошек в трусах!");
+    });
+
+    $("#button2").click(function(){
+      $("#field2").html("<b>Еще один анкедот.</b><div>Самое любимое в уборке квартиры - гоняться за котом с пылесосом...</div>");
+    });
+
+    $("#button3").click(function(){
+      $("#field3").val("Почему китайцев так много? Потому что у ник китайские призервативы!");
+    });
+
+    var isHappy = false;
+    $("#button4").click(function(){
+      isHappy = !isHappy;
+      if (isHappy) {
+        $("#face").attr({
+          "src" : "images/icons8-happy-100.png",
+          "alt" : "счастливый"
+        });
+      }
+      else {
+        $("#face").attr({
+          "src" : "images/icons8-crying-100.png",
+          "alt" : "грустный"
+        });
+      }
+    });
+  }); // эта закрывающая скобка тоже
+  </script>
+  <title>Изменить значение</title>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Изменить значение</h1>
+  </div>
+  <div class="wrapper">
+    <button id="button1">изменить значение text</button>
+    <div id="field1">скучный текст</div>
+  </div>
+  <div class="wrapper">
+    <button id="button2">изменить значение html</button>
+    <div id="field2">скучный текст</div>
+  </div>
+  <div class="wrapper">
+    <button id="button3">изменить value</button>
+    <input id="field3" type="text" value="скучный текст" style="width: 100%;">
+  </div>
+  <div class="wrapper">
+    <button id="button4">изменить значение атрибута src у картинки</button>
+    <div>
+      <img id="face" src="images/icons8-crying-100.png">
+    </div>
+    <div><a href="https://icons8.com/" target="_blank">Иконки с этого сайта - хороший сайт, кстати</a></div>
+  </div>
+</body>
+</html>
