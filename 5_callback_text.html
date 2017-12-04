@@ -14,18 +14,13 @@
   $(document).ready(function() { // эта часть всегда пишется
     // тут пишем методы
     $("#button1").click(function(){
-      $(".class1").text(function(index, origText){
-        if (index === 0) {
-          return origText + " - это старый текст, index: " + index + " - это первая строка. ";
-        }
-        return origText + " - это старый текст, index: " + index + " - это НЕ первая строка. ";
-      });
+      
+
     });
 
     $("#button2").click(function(){
-      $(".class2").html(function(index, origText){
-        return '<div class="my_div"> это новый текст, а раньше был ' + origText +'</div>';
-      });
+      
+      
     });
   }); // эта закрывающая скобка тоже
   </script>
