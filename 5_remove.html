@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/jquery.min.js"></script>
+  <script>
+  $(document).ready(function() { // эта часть всегда пишется
+    // тут пишем методы
+    $("#button1").click(function(){
+      $("#field1").remove();
+    });
+
+    $("#button2").click(function(){
+      $("#field2").empty();
+    });
+
+    $("#button3").click(function(){
+      $("div").remove();
+      $("body").append('<p>Упс все удалилось, надо перезагрузить страницу ...</p>');
+    });
+
+    $("#button4").click(function(){
+      $("div").remove(".bad, .very_bad");
+    });
+  }); // эта закрывающая скобка тоже
+  </script>
+  <title>Работа с DOM: удаление элементов</title>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Работа с DOM: удаление элементов</h1>
+  </div>
+  <div class="wrapper">
+    <button id="button1">нажмите чтобы удалить remove</button>
+    <div id="field1" class="common_div">... Жил-был человек, ничего такого не делал, никому особенно не мешал, работал комендантом общежития, достиг успехов, и вдруг вызвал его товарищ Голый, поругал за приверженность к религии и бросил на повышение ... – комендантом Колонии Необъясненных Явлений. - <b>Аркадий и Борис Стругацкие</b>
+    </div>
+  </div>
+  <div class="wrapper">
+    <button id="button2">нажмите чтобы очистить</button>
+    <div id="field2" class="common_div">... Жил-был человек, ничего такого не делал, никому особенно не мешал, работал комендантом общежития, достиг успехов, и вдруг вызвал его товарищ Голый, поругал за приверженность к религии и бросил на повышение ... – комендантом Колонии Необъясненных Явлений. - <b>Аркадий и Борис Стругацкие</b>
+    </div>
+  </div>
+  <div class="wrapper">
+    <button id="button3">удалить все div</button>
+    <button id="button4">удалить только div с классами bad и very_bad</button>
+    <div class="common_div bad">плохой</div>
+    <div class="common_div good" style="background-color: green;">хороший</div>
+    <div class="common_div very_bad">очень плохой</div>
+  </div>
+</body>
+</html>

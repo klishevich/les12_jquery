@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <style>
+  .important {
+    font-weight: bold;
+    font-size: xx-large;
+  }
+
+  .blue {
+      color: blue;
+  }
+
+  .with_bg {
+    background-size: cover;
+    width: 600px;
+    height: 600px;
+  }
+
+  .with_bg1 {
+    background-image: url(images/1.jpg);
+  }
+
+  .with_bg2 {
+    background-image: url(images/2.jpg);
+  }
+  </style>
+  <script src="js/jquery.min.js"></script>
+  <script>
+  $(document).ready(function() { // эта часть всегда пишется
+    // тут пишем методы
+    $("#button1").click(function(){
+      $(".my_div h1, .my_div h2, .my_div p").addClass("blue");
+    });
+
+    $("#button2").click(function(){
+      $("#div2").addClass("important blue");
+    });
+
+    $("#button3").click(function(){
+      $(".my_div h1, .my_div h2, .my_div p").removeClass("blue");
+    });
+
+    $("#button4").click(function(){
+      $("#div4").toggleClass("with_bg1");
+    });
+
+    $("#button5").click(function(){
+      $("#div4").toggleClass("with_bg2");
+    });
+  }); // эта закрывающая скобка тоже
+  </script>
+  <title>Манипуляции с CSS Классами</title>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Манипуляции с CSS Классами</h1>
+  </div>
+  <div class="wrapper my_div">
+    <button id="button1">добавить класс blue</button>
+    <h1>Заголовок</h1>
+    <h2>Заголовок 2</h2>
+    <h3>Заголовок 3, который не изменится</h3>
+    <p>Параграф</p>
+  </div>
+  <div class="wrapper">
+    <button id="button2">добавить классы blue и important</button>
+    <div id="div2" class="common_div">скажи-ка дядя ведь не даром Москва спаленная пожаром французам отдана?</div>
+  </div>
+  <div class="wrapper">
+    <button id="button3">удалить класс blue из первого блока</button>
+  </div>
+  <div id="div4" class="wrapper with_bg">
+    <button id="button4">переклюатель первого фона</button>
+    <button id="button5">переклюатель второго фона</button>
+    <div><a href="https://www.freepik.com/free-vector/reindeer-in-santa-hat-peeping-out_1430479.htm">Designed by Freepik</a></div>
+  </div>
+
+</body>
+</html>

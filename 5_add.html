@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/jquery.min.js"></script>
+  <script>
+  $(document).ready(function() { // эта часть всегда пишется
+    // тут пишем методы
+    $("#button1").click(function(){
+      $("#field1").append(" <b>Добавленный текст</b>.");
+    });
+
+    $("#button2").click(function(){
+      $(".list_div ol").append("<li>Appended item</li>");
+    });
+
+    $("#button3").click(function(){
+      var txt1 = "<p>Создано через HTML.</p>"; // Create element with HTML  
+      var txt2 = $("<p></p>").text("Создано через jQuery.");   // Create with jQuery
+      var txt3 = document.createElement("p");  // Create with DOM
+      txt3.innerHTML = "Создано через DOM.";
+      $("#field3").append(txt1, txt2, txt3);
+    });
+
+    $("#button4").click(function(){
+      $("#face").before('<img src="images/icons8-crying-100.png">');
+    });
+
+    $("#button5").click(function(){
+      $("#face").after('<img src="images/icons8-happy-100.png">');
+    });
+  }); // эта закрывающая скобка тоже
+  </script>
+  <title>Работа с DOM: добавление элементов</title>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Работа с DOM: добавление элементов</h1>
+  </div>
+  <div class="wrapper">
+    <button id="button1">append div</button>
+    <div id="field1">Это текстовое содержимое div</div>
+    P.S. Аналогично работает <b>prepend</b> только добавляет в начало
+  </div>
+  <div class="wrapper list_div">
+    <button id="button2">append li</button>
+    Изменяемый список
+    <ol>
+      <li>List item 1</li>
+      <li>List item 2</li>
+      <li>List item 3</li>
+    </ol>
+    P.S. Аналогично работает <b>prepend</b> только добавляет в начало
+  </div>
+  <div class="wrapper" style="border: none;">
+    Другой список
+    <ol>
+      <li>List item 1</li>
+      <li>List item 2</li>
+      <li>List item 3</li>
+    </ol>
+  </div>
+  <div class="wrapper">
+    <button id="button3">append несколько элементов div</button>
+    <div id="field3">Это текстовое содержимое div</div>
+  </div>
+  <div class="wrapper">
+    <div>
+      <button id="button4">до изучения jQuery (before)</button>
+      <button id="button5">после изучения jQuery (after)</button>
+    </div>
+    <img id="face" src="images/icons8-neutral-100.png">
+  </div>
+</body>
+</html>
